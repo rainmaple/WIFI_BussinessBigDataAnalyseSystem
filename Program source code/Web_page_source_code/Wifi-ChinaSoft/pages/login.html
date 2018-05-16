@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>基于Wifi探针的商店信息分析系统</title>
+
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+   <script type="text/javascript">
+    function checkUser(){
+        var user = document.getElementById("user").value;
+        var password = document.getElementById("pass").value;
+        if(user == ""  ){
+          alert("用户名不能为空");
+          return false;
+        }
+        if(password == ""  ){
+          alert("密码不能为空");
+          return false;
+        }
+        $.ajax({
+            type: "post",
+            url: "/web03/session/Log",
+            data: {
+                u: user,
+                p: password
+            },
+            dataType: "TEXT",
+            success: function(r) {                   
+                if(r.trim() == "y") {              //y为 url跳转网页中传回的值。
+                    window.location.href = "/web03/Wifi-ChinaSoft/index.html";
+                } else {
+                    alert("用户名或密码错误");
+                }
+            }
+        });
+     }
+    </script>
+</head>
+
+<body>
+
+    <div class="container" >
+        <div class="row" >
+                    <div class="col-md-7 col-md-offset-3">
+                    
+                    <!--  <div class="panel-heading">
+                        <h3 class="panel-title">基于wifi探针的商业大数据分析</hs3>
+                    </div>
+
+ -->                    
+                        <div class="login-panel panel panel-default" style="margin-top:16%;">
+                        <div >
+                        <div class="media">
+                            <div class="media-middle media-middle">
+                            <a href="#">
+                             <img class="media-object" style="width:100%;"src="../wifi.jpg" >
+                             </a>
+
+                        </div>
+                            
+                        <div class="panel-body">
+                            <h1></h1>  
+                              <label style="fontfamily:微软雅黑;">User Name</label>
+                               
+                        <form role="form">
+                            <fieldset>
+
+
+                                <div class="form-group" style="margin-bottom:20px;">
+                                    <input class="form-control" placeholder="UserName" name="email" id="user" type="email" autofocus>
+
+                                </div>
+                                <label for="password" style="display:block;position:relative;" >
+                             Password 
+
+                              </label>
+                                <div class="form-group" style="margin-bottom:20px;">
+                                    <input class="form-control" placeholder="Password" name="password" id="pass" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label style="margin-bottom:20px;">
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <input class="btn btn-lg btn-success btn-block" type="button" id="btn" value="登录"  onclick = "checkUser();"  />
+                            </fieldset>
+                        </form>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+</body>
+
+</html>

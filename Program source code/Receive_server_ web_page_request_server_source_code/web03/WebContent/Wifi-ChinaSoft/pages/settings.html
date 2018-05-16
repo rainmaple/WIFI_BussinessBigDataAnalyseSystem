@@ -1,0 +1,190 @@
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>探针状态查看及设置</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="../vendor/bootstrap/css/bootstrap-switch.css" rel="stylesheet">
+	<link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+	<script src="../vendor/jquery/jquery.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap-switch.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script type="text/javascript">
+function confirm(){
+	$.ajax({
+        type: "post",
+        url: "/web03/session/Comfirm",
+        data: {},
+        async : false,
+        dataType: "TEXT",
+        success: function(result) {  
+        	if(result=='N'){
+        		window.location.href="/web03/Wifi-ChinaSoft/pages/test.html";
+        	}
+        }
+    });
+}
+function getQueryString(name) { 
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+	r = window.location.search.substr(1).match(reg); 
+	if (r != null) return unescape(r[2]); return null; 
+}
+window.onload=function(){
+	confirm();
+	  var tanzhen=window.document.getElementById("tanzhen-oprlist");  
+	  var str="";
+	  var beginstr=getQueryString("begin");
+	  var numstr=getQueryString("num");
+	  var num=8;
+	  var begin=1;
+	  if(numstr!=null && numstr.toString().length>=1){
+		num=parseInt(numstr);
+	  }
+	  if(num>8 ){
+		num=8;
+	  }
+	  if(beginstr!=null && beginstr.toString().length>=1){
+		begin=parseInt(beginstr);
+	  }
+	  if(begin<=0){
+		begin=1;
+	  }
+	numstr=num+"";
+	beginstr=(begin-1)+"";
+	  var status=[];
+	  var ty=[];
+      $.ajax({
+          type: "post",
+          url: "/web03/servlet/WifiStatus",
+          data: {
+          	num : numstr,
+		begin: beginstr
+          	
+          },
+          async : false,
+          dataType: "JSON",
+          success: function(result) {  
+          	status=result.status;
+          	ty=result.type;
+          }
+      });
+      for(var i=0;i<=status.length-1;i++){
+    	 if(status[i]=='on') status[i]='checked';
+    	 else status[i]='unchecked';
+      }
+	  for(var i=1;i<=status.length;i++){
+		  str+='<li class="list-group-item"><span class="label label-default">'+(i+begin-1)+'号探针</span><span aria-hidden="true">&rarr;</span><input  type="checkbox" id="'+(i+begin-1)+'" name="my-checkbox" '+status[i-1]+' value="'+(i+begin-1)+'"/><span style="float:right;"><code>'+ty[i]+'</code></span> </li>'
+	  }
+	  tanzhen.innerHTML=str;
+	  $("[name='my-checkbox']").bootstrapSwitch();
+	  $("[name='my-checkbox']").on('switchChange.bootstrapSwitch', function (event,state) {  
+		  	var obj = document.getElementsByName("my-checkbox");
+		  	for(var i=0;i<=obj.length-1;i++){
+				var str=(i+1)+"";
+		  		if(obj[i].checked){
+		  			if(status[i]!='checked'){
+		  				$.ajax({
+		  		          type: "post",
+		  		          url: "/web03/servlet/WifiControl",
+		  		          data: {
+		  		          	wifinum:str
+		  		          },
+		  		          async : false,
+		  		          dataType: "TEXT",
+		  		          success: function(result) {  
+		  		          	if(result=='N'){
+							alert("Wait for 5min to Control");
+						}
+		  		          }
+		  		      });
+		  			}
+		  		}else{
+		  			if(status[i]!='unchecked'){
+						$.ajax({
+		  		          type: "post",
+		  		          url: "/web03/servlet/WifiControl",
+		  		          data: {
+		  		          	wifinum:str
+		  		          },
+		  		          async : false,
+		  		          dataType: "TEXT",
+		  		          success: function(result) {  
+						if(result=='N'){
+							alert("Wait for 5min to Control");
+						}
+		  		          	
+		  		          }
+		  		      });
+		  			}
+		  		}
+		  	}
+	  });  
+	
+}
+</script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                
+                <a class="navbar-brand" href="index.html">< 返回主菜单</a>
+            </div>
+            <!-- /.navbar-header -->
+
+           
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+
+	<div class="panel panel-default" style="margin:20px">
+  <!-- Default panel contents -->
+ 		 <div class="panel-heading">探针状态查看及设置（短信模块控制）</div>
+  			<div class="panel-body">
+    		
+ 		  </div>
+
+  <!-- List group -->
+  <form id = 'formid' action="www.baidu.com" method='post'>
+	<ul class="list-group" id="tanzhen-oprlist">
+	</ul>
+  </form>
+</div>
+</div>
+
+</div>
+
+</body>
+<script>
+
+</script>
+</html>
