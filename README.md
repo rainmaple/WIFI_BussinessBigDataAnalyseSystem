@@ -16,7 +16,8 @@
 对于探针功能的拓展：探针绑定短信模块，后台实现短信接口，从而对探针实现远程控制与状态监控。针对不同店铺大小推出小店铺探针，中性店铺三探针，大型店铺多探针模式，中型以上店铺支持定位，从而进一步分析呈现区域热点。
 此外作品特色的添加了分析预测的功能，并基于分析预测功能结合历史数据智能的为商家提供商业决策支持，其中包括营销方案的推送，店铺排名波动的提醒功能。
 
-示例图
+#### 示例图
+
 1. 商城总体概览
 
 ![商城总体客流概览](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%95%86%E5%9C%BA%E6%80%BB%E4%BD%93%E6%83%85%E5%86%B5.png)
@@ -26,6 +27,7 @@
 ![热力图](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%95%86%E5%9F%8E%E5%8C%BA%E5%9F%9F%E7%83%AD%E7%82%B9.png)
 
 3. 决策支持之营销方案推送
+
 ![决策支持之营销方案推送](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%86%B3%E7%AD%96%E6%94%AF%E6%8C%81%E4%B9%8B%E8%90%A5%E9%94%80%E6%96%B9%E6%A1%88%E6%8E%A8%E9%80%81.png)
 
 
@@ -40,7 +42,7 @@
   - 通过单片机可以通过发送不同的命令可以对探针进行远程控制，如：关闭、开启、重启、定时关闭、定时开启等功能
 
 ### 3.我们的视频上传地址
-!(http://v.youku.com/v_show/id_XMjg1ODE1NDc2MA==.html?spm=a2hzp.8244740.0.0)密码为 `super2017`
+[点击观看](http://v.youku.com/v_show/id_XMjg1ODE1NDc2MA==.html?spm=a2hzp.8244740.0.0) 密码为 `super2017`
 
 ### 4.主要说明我们上传文件的分类
 
