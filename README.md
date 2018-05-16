@@ -15,7 +15,9 @@
 此外作品特色的添加了分析预测的功能，并基于分析预测功能结合历史数据智能的为商家提供商业决策支持，其中包括营销方案的推送，店铺排名波动的提醒功能。
 
 示例图
-![image](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/blob/master/images_about/%E5%95%86%E5%9F%8E%E5%8C%BA%E5%9F%9F%E7%83%AD%E7%82%B9.png)
+![image](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%95%86%E5%9F%8E%E5%8C%BA%E5%9F%9F%E7%83%AD%E7%82%B9.png)
+
+![image](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E7%83%AD%E9%97%A8%E5%BA%97%E9%93%BA%E6%8E%92%E5%90%8D.png)
 ### 1.主要框架
 本系统使用Spark框架，结合HBase数据库、服务器Tomcat纵向集群、Hadoop集群组成。
 缓冲服务器端主要使用HBase和HDFS，HBase用来存储结构化数据，HDFS用来存储训练模型数据，
@@ -26,7 +28,9 @@
   - 对于依赖于学生或在学校周围的类似商店，我们选择了周预测，提醒商户为高峰期做好准备
   - 通过单片机可以通过发送不同的命令可以对探针进行远程控制，如：关闭、开启、重启、定时关闭、定时开启等功能
 
-### 3.我们的视频上传地址为点击进入网站[http://v.youku.com/v_show/id_XMjg1ODE1NDc2MA==.html?spm=a2hzp.8244740.0.0/](http://v.youku.com/v_show/id_XMjg1ODE1NDc2MA==.html?spm=a2hzp.8244740.0.0),密码为 `super2017`
+### 3.我们的视频上传地址
+
+[点此观看](http://v.youku.com/v_show/id_XMjg1ODE1NDc2MA==.html?spm=a2hzp.8244740.0.0),密码为 `super2017`
 
 ### 4.主要说明我们上传文件的分类
 
@@ -46,7 +50,14 @@
     - 源代码说明.pdf
 
 ***文件内容说明***
+关于宣传册内容
+![封面](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%AE%A3%E4%BC%A0%E5%86%8C/00%20%E5%B0%81%E9%9D%A2.jpg)
 
+![作品概况](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/宣传册/01%20作品概况.jpg)
+
+![技术架构](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%AE%A3%E4%BC%A0%E5%86%8C/02%20%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.jpg)
+
+![功能概览](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%AE%A3%E4%BC%A0%E5%86%8C/03%20%E5%8A%9F%E8%83%BD%E6%A6%82%E8%A7%88.jpg)
 
 | 文件| 主要内容 |
 | ------ | ------ |
