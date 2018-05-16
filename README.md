@@ -8,7 +8,7 @@
 
 ****
 ### 问题分析
-![问题分析](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.png
+![问题分析](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.png)
 ### 作品简介
 该平台主要针对WIFI探针采集到的大量客流数据进行分析。
 服务端主要接收探针每三秒发送一次的数据，于接收端搭建Tomcat纵向集群，有效处理1300台以上的并发请求，将数据保存到数据分析平台待用，文件系统使用HDFS分布式文件系统。数据分析平台搭建于Linux系统，采用Spark&Habse的分布式搭建模式，后台数据分析程序在3秒之内分析完实时数据，传至前台可视化，实现实时数据的展示。
@@ -40,7 +40,7 @@
   - 通过单片机可以通过发送不同的命令可以对探针进行远程控制，如：关闭、开启、重启、定时关闭、定时开启等功能
 
 ### 3.我们的视频上传地址
-![点此观看](http://v.youku.com/v_show/id_XMjg1ODE1NDc2MA==.html?spm=a2hzp.8244740.0.0)密码为 `super2017`
+!(http://v.youku.com/v_show/id_XMjg1ODE1NDc2MA==.html?spm=a2hzp.8244740.0.0)密码为 `super2017`
 
 ### 4.主要说明我们上传文件的分类
 
