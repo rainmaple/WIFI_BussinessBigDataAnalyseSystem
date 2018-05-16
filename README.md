@@ -7,6 +7,8 @@
 **组员：魏、陶、丁**
 
 ****
+### 问题分析
+![问题分析](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.png
 ### 作品简介
 该平台主要针对WIFI探针采集到的大量客流数据进行分析。
 服务端主要接收探针每三秒发送一次的数据，于接收端搭建Tomcat纵向集群，有效处理1300台以上的并发请求，将数据保存到数据分析平台待用，文件系统使用HDFS分布式文件系统。数据分析平台搭建于Linux系统，采用Spark&Habse的分布式搭建模式，后台数据分析程序在3秒之内分析完实时数据，传至前台可视化，实现实时数据的展示。
