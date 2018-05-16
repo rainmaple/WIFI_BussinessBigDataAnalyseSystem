@@ -15,7 +15,18 @@
 此外作品特色的添加了分析预测的功能，并基于分析预测功能结合历史数据智能的为商家提供商业决策支持，其中包括营销方案的推送，店铺排名波动的提醒功能。
 
 示例图
-![image](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%95%86%E5%9F%8E%E5%8C%BA%E5%9F%9F%E7%83%AD%E7%82%B9.png)
+1. 商城总体概览
+
+![商城总体客流概览](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%95%86%E5%9C%BA%E6%80%BB%E4%BD%93%E6%83%85%E5%86%B5.png)
+
+2. 商城每层的热力分布
+
+![热力图](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%95%86%E5%9F%8E%E5%8C%BA%E5%9F%9F%E7%83%AD%E7%82%B9.png)
+
+3. 决策支持之营销方案推送
+![决策支持之营销方案推送](https://github.com/rainmaple/WIFI_BussinessBigDataAnalyseSystem/raw/master/images_about/%E5%86%B3%E7%AD%96%E6%94%AF%E6%8C%81%E4%B9%8B%E8%90%A5%E9%94%80%E6%96%B9%E6%A1%88%E6%8E%A8%E9%80%81.png)
+
+
 ### 1.主要框架
 本系统使用Spark框架，结合HBase数据库、服务器Tomcat纵向集群、Hadoop集群组成。
 缓冲服务器端主要使用HBase和HDFS，HBase用来存储结构化数据，HDFS用来存储训练模型数据，
