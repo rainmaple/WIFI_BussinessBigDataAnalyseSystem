@@ -14,7 +14,10 @@
 服务端主要接收探针每三秒发送一次的数据，于接收端搭建Tomcat纵向集群，有效处理1300台以上的并发请求，将数据保存到数据分析平台待用，文件系统使用HDFS分布式文件系统。数据分析平台搭建于Linux系统，采用Spark&Habse的分布式搭建模式，后台数据分析程序在3秒之内分析完实时数据，传至前台可视化，实现实时数据的展示。
 作品较好的完成包括客流量、入店量、入店率、来访周期、新老顾客、顾客活跃度、驻店时长、来访周期、跳出率、深访率在内的九大基础指标的分析。并于前端页面上注重直观展示数据的变化趋势，数据分析所涉及的范围根据店铺具体情况支持自定义阕值。
 对于探针功能的拓展：探针绑定短信模块，后台实现短信接口，从而对探针实现远程控制与状态监控。针对不同店铺大小推出小店铺探针，中性店铺三探针，大型店铺多探针模式，中型以上店铺支持定位，从而进一步分析呈现区域热点。
-此外作品特色的添加了分析预测的功能，并基于分析预测功能结合历史数据智能的为商家提供商业决策支持，其中包括营销方案的推送，店铺排名波动的提醒功能。
+此外作品特色的添加了分析预测的功能，并基于分析预测功能结合历史数据智能的为商家提供商业决策支持，其中包括营销方案的推送，店铺排名波动的提醒
+
+#### English introduction
+The commercial big data analysis system based on the WiFi probe uses the Hadoop data analysis platform and the Spark framework to quickly analyze the data collected by the probes. It adopts the Tomcat vertical cluster server construction mode to implement the high concurrency processing of the data receiving server to the web interface and uses the Echarts chart. Visualization can be used to analyze the trend of changes in the customer flow of the mall and to use machine learning regression prediction. My main responsibility is to build the overall business logic and write the front and back code. 
 
 #### 示例图
 
